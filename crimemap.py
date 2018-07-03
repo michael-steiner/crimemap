@@ -14,7 +14,7 @@ def home():
     except Exception as e:
         print(e)
         data = None
-        return render_template("home.html", data=data)
+    return render_template("home.html", data=data)
 
 
 @app.route("/add", methods=["POST"])
@@ -26,6 +26,7 @@ def add():
         print(e)
     return home()
 
+
 @app.route("/clear")
 def clear():
     try:
@@ -33,6 +34,7 @@ def clear():
     except Exception as e:
         print(e)
     return home()
+
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
