@@ -4,6 +4,7 @@ from flask import render_template
 from flask import request
 
 app = Flask(__name__)
+DB = DBHelper()
 
 
 @app.route("/")
@@ -26,7 +27,7 @@ def add():
     return home()
 
 @app.route("/clear")
-def clear()
+def clear():
     try:
         DB.clear_all()
     except Exception as e:
